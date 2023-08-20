@@ -11,7 +11,9 @@
         <h3>{{repository.created_at | date}}</h3>
       </div>
     </div>
-    <fa-icon [icon]="faLink" class="repo_bar_link"></fa-icon>
+    <a [href]="repository.link" target="_blank">
+      <fa-icon [icon]="faLink" class="repo_bar_link"></fa-icon>
+    </a>
   </div>
 
   <div>
