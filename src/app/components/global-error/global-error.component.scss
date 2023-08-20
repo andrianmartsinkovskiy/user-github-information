@@ -1,0 +1,17 @@
+.global-error {
+  &_wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100vw;
+    background-color: rgba(39, 69, 245, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-family: Inter, sans-serif;
+    text-align: center;
+    color: #fff;
+  }
+}

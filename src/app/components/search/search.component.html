@@ -1,0 +1,23 @@
+<div class="search_wrap">
+  <div class="search_container">
+    <h1 class="search_title">Analyze User Github</h1>
+    <form [formGroup]="form" (ngSubmit)="submit()" class="search-form">
+      <p
+        class="search-form_error"
+        *ngIf="name.touched && name.errors"
+      >
+        min length of the username is 3 letters
+      </p>
+      <button class="search-form_submit" type="submit">
+        <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+      </button>
+      <input
+        class="search-form_name"
+        placeholder="...username"
+        type="text"
+        formControlName="name"
+        autoFocus
+      >
+    </form>
+  </div>
+</div>

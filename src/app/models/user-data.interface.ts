@@ -1,8 +1,7 @@
-export interface IUserInfo {
+export interface IUserData {
   name: string,
   avatar: string,
   public_repos: number,
   created_at: string,
-  repos: Record<string, any>[],
-  languages: Record<string, any>[]
+  yearsInService: number
 }

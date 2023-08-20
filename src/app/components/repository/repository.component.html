@@ -1,0 +1,31 @@
+<div class="repo_wrap">
+  <div class="repo_bar">
+    <div>
+      <div class="repo_bar_property">
+        <span class="repo_property-span">name:</span>
+        <h3>{{repository.name}}</h3>
+      </div>
+
+      <div class="repo_bar_property">
+        <span class="repo_property-span">create at:</span>
+        <h3>{{repository.created_at | date}}</h3>
+      </div>
+    </div>
+    <fa-icon [icon]="faLink" class="repo_bar_link"></fa-icon>
+  </div>
+
+  <div>
+    <span class="repo_property-span">Languages:</span>
+
+    <div>
+      <div class="repo_languages-list">
+        <div class="repo_language-item" *ngFor="let language of repository.languages">
+          <span class="repo_language-item_name">{{language.key}} {{language.percent}}%</span>
+          <div class="repo_language-item_dec" [style.width]="language.percent + '%'">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

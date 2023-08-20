@@ -1,12 +1,7 @@
-export interface IProduct {
-  id: number,
-  title: string,
-  price: number,
-  description: string,
-  category: string,
-  image: string,
-  rating: {
-    rate: number,
-    count: number
-  }
+export interface IRepository {
+  name: string,
+  link: number,
+  created_at: string,
+  updated_at: string,
+  languages: Record<string, any>[]
 }

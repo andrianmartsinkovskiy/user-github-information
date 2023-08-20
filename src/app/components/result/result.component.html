@@ -1,0 +1,60 @@
+<div class="result_wrap">
+  <div class="result_container" *ngIf="!isLoading">
+    <div class="result-bar">
+      <div class="result-bar_info">
+        <a routerLink="/search">
+          <fa-icon class="result-bar_title-icon" [icon]="faCircleLeft"></fa-icon>
+        </a>
+        <div class="result-bar_title">
+          User Information
+        </div>
+      </div>
+      <div class="result-bar_name">
+        <p class="result-bar_name-label">
+          <fa-icon [icon]="faUser"></fa-icon>
+          username
+        </p>
+        <h4 class="result-bar_name-value">{{userInfo.name}}</h4>
+      </div>
+    </div>
+    <div class="result-content">
+      <div class="result-content_wrap">
+        <img class="result-content_avatar" src="./assets/images/person.png" alt="">
+        <div class="result-content_profile">
+          <h3 class="result-content_profile-title">Profile</h3>
+          <div class="result-content_profile-info">
+            <p>{{userInfo.name}}</p>
+            <p>{{userInfo.yearsInService}} years in service</p>
+            <p>{{userInfo.public_repos}} public repos</p>
+          </div>
+        </div>
+        <div class="result-content_languages">
+          <h3 class="result-content_languages-title">Top 3 Languages</h3>
+          <div class="user-languages">
+            <div
+              class="user-languages_item"
+              *ngFor="let language of userInfo.languages"
+            >
+              <span class="user-languages_item_percent">{{language.percent}}%</span>
+              <div
+                class="user-languages_item_bar"
+                [style.width]="language.percent + '%'"
+              >
+                <span class="user-languages_item_name">{{language.key}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="result-content_repos-wrap">
+        <div class="result-content_repos">
+          <app-repository *ngFor="let repo of userInfo.repos" [repository]="repo"></app-repository>
+        </div>
+      </div>
+    </div>
+
+    <div class="test"></div>
+  </div>
+</div>
